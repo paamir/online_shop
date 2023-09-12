@@ -1,5 +1,13 @@
 from django.shortcuts import render
 from django.views import generic
-# Create your views here.
+
+from .models import Product
+
+
 class ProductListView(generic.ListView):
-    pass
+    model = Product
+    template_name = 'products/product_list.html'
+    context_object_name = 'product_list'
+
+    def get_queryset(self):
+        return Product.objects.filter(active=True)
