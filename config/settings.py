@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     # local
     'accounts',
     'pages',
+    'products',
 
 ]
 SITE_ID = 1
