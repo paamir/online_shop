@@ -7,6 +7,7 @@ from django.utils.translation import gettext_lazy as _
 class Product(models.Model):
     title = models.CharField(max_length=100, verbose_name=_("product title"))
     description = models.TextField(verbose_name=_("product description"))
+    image = models.ImageField(verbose_name=_('Product Image'), upload_to='product/product_cover/', blank=True)
     price = models.PositiveIntegerField(default=0, verbose_name=_("product price"))
     active = models.BooleanField(default=True, verbose_name=_("product status"))
 
