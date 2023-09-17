@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
 
     # tird party
     'crispy_forms',
@@ -52,6 +53,7 @@ INSTALLED_APPS = [
     'accounts',
     'pages',
     'products',
+    'jalali',
 
 ]
 SITE_ID = 1

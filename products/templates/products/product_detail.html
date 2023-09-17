@@ -1,5 +1,5 @@
 {% extends '_base.html' %}
-{% load crispy_forms_tags i18n active_comment_tag jalali_tags%}
+{% load crispy_forms_tags i18n active_comment_tag jalali_tags persian_translation_tags humanize%}
 {% block title %}{{ product.title }} detail{% endblock title %}
 {% load static %}
 {% block content %}
@@ -32,7 +32,7 @@
                                     {{product.description }}
                                 </p>
                                 <div class="my-5 py-5 product-price-wrapper mb--25">
-                                    <span class="money text-success">{{ product.price }} تومان</span>
+                                    <span class="money text-success">{{ product.price|translate_number|intcomma:False }} تومان</span>
                                     <span class="price-separator">-</span>
                                     <span class="money old-price text-danger">۲۱۰,۰۰۰ تومان</span>
                                 </div>
@@ -128,7 +128,7 @@
                                                                     <div class="review__meta">
                                                                         <strong class="review__author px-4">{{ comment.user.username }}</strong>
                                                                         <span class="review__dash">-</span>
-                                                                        <span class="review__published-date px-4">{{ comment.creation_datetime|to_jalali:'%Y/%b/%d' }}</span>
+                                                                        <span class="review__published-date px-4">{{ comment.creation_datetime|translate_number|to_jalali:'%Y/%b/%d' }}</span>
                                                                     </div>
                                                                     <div class="product-rating">
                                                                         <div class="m-0 star-rating star-five">
