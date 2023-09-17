@@ -1,5 +1,5 @@
 {% extends '_base.html' %}
-{% load crispy_forms_tags i18n active_comment_tag%}
+{% load crispy_forms_tags i18n active_comment_tag jalali_tags%}
 {% block title %}{{ product.title }} detail{% endblock title %}
 {% load static %}
 {% block content %}
@@ -128,7 +128,7 @@
                                                                     <div class="review__meta">
                                                                         <strong class="review__author px-4">{{ comment.user.username }}</strong>
                                                                         <span class="review__dash">-</span>
-                                                                        <span class="review__published-date px-4">{{ comment.creation_datetime }}</span>
+                                                                        <span class="review__published-date px-4">{{ comment.creation_datetime|to_jalali:'%Y/%b/%d' }}</span>
                                                                     </div>
                                                                     <div class="product-rating">
                                                                         <div class="m-0 star-rating star-five">
